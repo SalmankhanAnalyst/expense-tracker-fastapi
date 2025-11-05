@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card shadow p-4">
+    <h3>Expense Details</h3>
+    <hr>
+
+    <p><strong>Title:</strong> {{ expense.title }}</p>
+    <p><strong>Category:</strong> {{ expense.category }}</p>
+    <p><strong>Amount:</strong> Rs. {{ expense.amount }}</p>
+    <p><strong>Date:</strong> {{ expense.date }}</p>
+    <p><strong>Comment:</strong> {{ expense.comment }}</p>
+
+    <a href="/expenses/list" class="btn btn-secondary">Back</a>
+</div>
+
+{% endblock %}

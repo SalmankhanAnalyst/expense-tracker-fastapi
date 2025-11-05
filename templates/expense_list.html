@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3>All Expenses</h3>
+    <a href="/expenses/add" class="btn btn-success">+ Add Expense</a>
+</div>
+
+<table class="table table-hover table-striped shadow">
+    <thead class="table-primary">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% for e in expenses %}
+        <tr>
+            <td>{{ e.id }}</td>
+            <td>{{ e.title }}</td>
+            <td>{{ e.category }}</td>
+            <td>Rs. {{ e.amount }}</td>
+            <td>{{ e.date }}</td>
+            <td>
+                <a href="/expenses/view/{{ e.id }}" class="btn btn-sm btn-info">View</a>
+                <a href="/expenses/delete/{{ e.id }}" class="btn btn-sm btn-danger"
+                   onclick="return confirm('Are you sure?');">Delete</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

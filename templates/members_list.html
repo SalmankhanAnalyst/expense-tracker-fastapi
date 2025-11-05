@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Members List</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<nav>
+    <a href="/members/add">Add Member</a>
+    <a href="/members/list">Members List</a>
+</nav>
+
+<div class="container">
+
+    <h2>Members List</h2>
+
+    <table>
+        <tr>
+            <th>ID</th><th>Name</th><th>Age</th><th>Email</th>
+        </tr>
+
+        {% for member in members %}
+        <tr>
+            <td>{{ member.id }}</td>
+            <td>{{ member.name }}</td>
+            <td>{{ member.age }}</td>
+            <td>{{ member.email }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+</body>
+</html>
